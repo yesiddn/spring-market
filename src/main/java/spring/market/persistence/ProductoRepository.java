@@ -1,5 +1,6 @@
 package spring.market.persistence;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import spring.market.domain.Product;
 import spring.market.domain.repository.ProductRepository;
@@ -14,7 +15,12 @@ import java.util.Optional;
 //El primero es mejor porque indicamos el tipo de componente que es.
 @Repository
 public class ProductoRepository implements ProductRepository {
+  @Autowired // esto facilita la inyeccion de dependencia, sin esto tendriamos que instanciar productoCrudRepository
+  // y si no se pone al ejecutar el codigo nos lanzara un null pointer exception
+  // solo se puede usar esta sintaxis en Beans o Componentes de spring
   private ProductoCrudRepository productoCrudRepository;
+
+  @Autowired
   private ProductMapper mapper;
 
 //   De esta forma toda la info que venga del dominio se puede traducir a la estructura de la persistencia
