@@ -1,8 +1,7 @@
 package spring.market.web.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import spring.market.domain.Product;
 import spring.market.domain.service.ProductService;
 
@@ -15,23 +14,28 @@ public class ProductController {
   @Autowired
   private ProductService productService;
 
+  @GetMapping()
   public List<Product> getAll() {
     return productService.getAll();
   }
 
-  public Optional<Product> getProduct(int productId) {
+  @GetMapping("/{id}")
+  public Optional<Product> getProduct(@PathVariable("id") int productId) {
     return productService.getProduct(productId);
   }
 
-  public Optional<List<Product>> getByCategoryId(int categoryId) {
+  @GetMapping("/category/{id}")
+  public Optional<List<Product>> getByCategoryId(@PathVariable("id") int categoryId) {
     return productService.getCategoryById(categoryId);
   }
 
-  public Product save(Product product) {
+  @PostMapping()
+  public Product save(@RequestBody Product product) {
     return productService.save(product);
   }
 
-  public boolean delete(int productId) {
+  @DeleteMapping("{id}")
+  public boolean delete(@PathVariable("id") int productId) {
     return productService.delete(productId);
   }
 }
