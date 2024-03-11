@@ -1,8 +1,9 @@
 package spring.market.web.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import spring.market.domain.Product;
@@ -18,6 +19,8 @@ public class ProductController {
   private ProductService productService;
 
   @GetMapping()
+  @Operation(description = "Get all supermarket products")
+  @ApiResponse(responseCode = "200", description = "All products")
   public ResponseEntity<List<Product>> getAll() {
     return new ResponseEntity<>(productService.getAll(), HttpStatus.OK); // recibe dos argumentos: respuesta y http status
   }
