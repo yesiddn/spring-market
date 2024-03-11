@@ -2,7 +2,6 @@ package spring.market.persistence;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import spring.market.domain.Product;
 import spring.market.domain.Purchase;
 import spring.market.domain.repository.PurchaseRepository;
 import spring.market.persistence.crud.CompraCrudRepository;

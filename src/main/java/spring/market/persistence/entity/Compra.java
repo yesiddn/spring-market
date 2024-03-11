@@ -23,7 +23,7 @@ public class Compra {
   private String estado;
 
   @Column(name = "id_cliente")
-  private Integer idCliente;
+  private String idCliente;
 
   @ManyToOne
   @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
@@ -71,11 +71,11 @@ public class Compra {
     this.estado = estado;
   }
 
-  public Integer getIdCliente() {
+  public String getIdCliente() {
     return idCliente;
   }
 
-  public void setIdCliente(Integer idCliente) {
+  public void setIdCliente(String idCliente) {
     this.idCliente = idCliente;
   }
 
