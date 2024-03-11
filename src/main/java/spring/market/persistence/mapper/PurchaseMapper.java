@@ -13,7 +13,7 @@ import java.util.List;
 @Mapper(componentModel = "spring", uses = {PurchaseItemMapper.class})
 public interface PurchaseMapper {
 //  Con respecto a MapStruct desde java 8 en adelante no es necesario usar la anotación @Mappings (No afecta si se usa):
-  @Mapping(source = "idCompra", target = "puchaseId")
+  @Mapping(source = "idCompra", target = "purchaseId")
   @Mapping(source = "idCliente", target = "clientId")
   @Mapping(source = "fecha", target = "date")
   @Mapping(source = "medioPago", target = "paymentMethod")
