@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController // le indica a spring que esta clase sera el controller de una api rest
+@CrossOrigin
 @RequestMapping("/products")
 public class ProductController {
   @Autowired

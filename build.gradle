@@ -27,6 +27,8 @@ dependencies {
 
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
 
+//  dependencia para los CORS
+    testImplementation 'org.apache.httpcomponents.client5:httpclient5'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

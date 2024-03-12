@@ -10,6 +10,7 @@ import spring.market.domain.service.PurchaseService;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/purchases")
 public class PurchaseController {
   @Autowired
